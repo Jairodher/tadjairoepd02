@@ -56,18 +56,33 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
-    <div id="heroValorant" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/all.jpeg" class="d-block w-100" alt="Todos los Agentes de Valorant">
-                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-4">
-                    <h1 class="display-4 fw-bold">CONOCE A TUS AGENTES</h1>
-                    <p>Encuentra el estilo de juego que mejor se adapte a ti.</p>
+    <div id="hero-valorant" class="position-relative overflow-hidden vh-100">
+        <video autoplay muted loop playsinline class="position-absolute w-100 h-100"
+            style="object-fit: cover; z-index: -1;">
+            <source src="mp3/video.mp4" type="video/mp4">
+            Tu navegador no soporta video.
+        </video>
+
+        <div class="position-absolute w-100 h-100 bg-black bg-opacity-50"></div>
+
+        <div class="container h-100 d-flex align-items-center justify-content-center text-center position-relative">
+            <div class="text-white">
+                <h1 class="display-1 fw-bold tracking-tighter text-uppercase">Conoce a tus <span
+                        class="text-danger">Agentes</span></h1>
+                <p class="fs-4 fw-light mb-4 opacity-75">Domina el campo de batalla con estilo y precisión.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#duelistas"
+                        class="btn btn-danger btn-lg px-4 py-3 fw-bold text-uppercase rounded-0">Explorar Roles</a>
+                    <a href="#mapas" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase rounded-0">Ver
+                        Mapas</a>
                 </div>
             </div>
         </div>
-    </div>
 
+        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4">
+            <div class="scroll-indicator"></div>
+        </div>
+    </div>
     <div id="audio-panel" class="bg-dark border border-danger p-3 rounded shadow-lg"
         style="position: fixed; bottom: 80px; right: 20px; z-index: 1000; width: 250px;">
 
@@ -1392,7 +1407,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE SOVA-->
     <div class="modal fade" id="modalSova" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1420,7 +1435,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE KAYO-->
     <div class="modal fade" id="modalKayo" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1448,7 +1463,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE GEKKO-->
     <div class="modal fade" id="modalGekko" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1476,7 +1491,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE FADE-->
     <div class="modal fade" id="modalFade" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1504,7 +1519,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE BREACH-->
     <div class="modal fade" id="modalBreach" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1532,7 +1547,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE TEJO-->
     <div class="modal fade" id="modalTejo" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1560,7 +1575,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE CHAMBER-->
     <div class="modal fade" id="modalChamber" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1588,7 +1603,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE SAGE-->
     <div class="modal fade" id="modalSage" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1616,7 +1631,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE KILLJOY-->
     <div class="modal fade" id="modalKilljoy" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1644,7 +1659,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE DEADLOCK-->
     <div class="modal fade" id="modalDeadlock" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1672,7 +1687,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE CYPHER-->
     <div class="modal fade" id="modalCypher" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1700,7 +1715,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE VETO-->
     <div class="modal fade" id="modalVeto" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1728,7 +1743,7 @@
             </div>
         </div>
     </div>
-
+    <!--HABILIDADES DE VYSE-->
     <div class="modal fade" id="modalVyse" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered text-dark">
             <div class="modal-content">
@@ -1756,14 +1771,14 @@
             </div>
         </div>
     </div>
-
+    <!-- FOOTER -->
     <footer class="bg-dark text-white py-4 border-top border-danger">
         <div class="container text-center">
             <p class="mb-1">Proyecto EPD2 - Bootstrap 5 Made by Jairo Rodríguez Hernández</p>
             <p class="text-secondary small">Cumple con la normativa WCAG de accesibilidad.</p>
         </div>
     </footer>
-
+    <!-- BOTÓN DE VOLVER A INICIO -->
     <button id="btn-back-to-top" class="btn btn-danger btn-lg rounded-circle shadow-lg"
         style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; width: 50px; height: 50px;">
         ↑

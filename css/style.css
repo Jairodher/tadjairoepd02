@@ -1,4 +1,9 @@
+/* ==========================================================================
+   1. VARIABLES Y CONFIGURACIÓN BASE
+   ========================================================================== */
+
 :root {
+    /* Paleta de colores oficial y temática de Valorant */
     --valorant-dark-blue: #0f1923;  
     --valorant-cream: #ece8e1;      
     --valorant-red: #ff4655;        
@@ -9,7 +14,6 @@
     --valorant-purple: #8a3bdd;
 }
 
-
 body {
     background-color: var(--valorant-dark-blue);
     color: white;
@@ -17,8 +21,71 @@ body {
 }
 
 html {
+    /* Desplazamiento suave al usar enlaces internos (anclas) */
     scroll-behavior: smooth;
 }
+
+/* Color de selección de texto personalizado */
+::selection { background: #ff4655; color: white; }
+::-moz-selection { background: #ff4655; color: white; }
+
+
+/* ==========================================================================
+   2. COMPONENTES DE INTERFAZ (NAVBAR, BREADCRUMB, HERO)
+   ========================================================================== */
+
+/* Navegación superior */
+.navbar {
+    background-color: var(--valorant-dark-blue) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Estilos de las migas de pan (Breadcrumbs) */
+.breadcrumb-item, .breadcrumb-item a { 
+    color: rgba(255, 255, 255, 0.8) !important; 
+    text-decoration: none; 
+}
+.breadcrumb-item.active { 
+    color: var(--valorant-red) !important; 
+    font-weight: bold; 
+}
+.breadcrumb-item + .breadcrumb-item::before { 
+    color: var(--valorant-red); 
+    content: "//"; /* Separador estilo Valorant */
+}
+
+/* Sección Hero Cinematográfica */
+#hero-valorant {
+    border-bottom: 3px solid #ff4655;
+}
+
+#hero-valorant h1 {
+    text-shadow: 2px 2px 0px rgba(255, 70, 85, 0.5); /* Efecto relieve rojo */
+}
+
+.tracking-tighter {
+    letter-spacing: -2px;
+}
+
+/* Indicador animado de scroll (Línea que baja) */
+.scroll-indicator {
+    width: 2px;
+    height: 60px;
+    background: linear-gradient(to bottom, #ff4655, transparent);
+    animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+    0% { transform: scaleY(0); transform-origin: top; opacity: 1; }
+    50% { transform: scaleY(1); transform-origin: top; opacity: 1; }
+    51% { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+    100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+
+/* ==========================================================================
+   3. TARJETAS DE AGENTES (CARDS)
+   ========================================================================== */
 
 .card {
     background-color: transparent;
@@ -42,107 +109,58 @@ html {
     object-position: center top; 
 }
 
-.card-duelista:hover { outline: 3px solid var(--valorant-red); }
-.card-controlador:hover { outline: 3px solid var(--valorant-blue); }
-.card-iniciador:hover { outline: 3px solid var(--valorant-green); }
-.card-centinela:hover { outline: 3px solid var(--valorant-yellow) !important; }
-
-
+/* Efecto hover general para todas las cartas */
 .card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important;
     z-index: 1;
 }
 
+/* Bordes de colores según el Rol al hacer Hover */
+.card-duelista:hover { outline: 3px solid var(--valorant-red); }
+.card-controlador:hover { outline: 3px solid var(--valorant-blue); }
+.card-iniciador:hover { outline: 3px solid var(--valorant-green); }
+.card-centinela:hover { outline: 3px solid var(--valorant-yellow) !important; }
+
+
+/* ==========================================================================
+   4. CLASES DE UTILIDAD POR ROL (COLORES)
+   ========================================================================== */
+
+/* Colores de bordes */
 .border-duelista { border-color: var(--valorant-red) !important; }
 .border-controlador { border-color: var(--valorant-blue) !important; }
 .border-iniciador { border-color: var(--valorant-green) !important; }
 .border-centinela { border-color: var(--valorant-yellow) !important; }
+.border-morado { border-color: var(--valorant-purple) !important; }
 
-
+/* Colores de fondo para Badges/Etiquetas */
 .bg-iniciador {
     background-color: var(--valorant-green) !important;
     color: var(--valorant-dark-blue) !important;
-    font-weight: bold;
 }
 
 .bg-centinela {
     background-color: var(--valorant-yellow) !important;
     color: var(--valorant-dark-blue) !important;
-    font-weight: bold;
 }
 
-
-.navbar {
-    background-color: var(--valorant-dark-blue) !important;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.breadcrumb-item, .breadcrumb-item a { color: rgba(255, 255, 255, 0.8) !important; text-decoration: none; }
-.breadcrumb-item.active { color: var(--valorant-red) !important; font-weight: bold; }
-.breadcrumb-item + .breadcrumb-item::before { color: var(--valorant-red); content: "//"; }
-
-
-
-.hidden-card {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-
-.show-card {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
+/* Colores de texto */
 .text-duelista { color: var(--valorant-red) !important; }
 .text-controlador { color: var(--valorant-blue) !important; }
 .text-iniciador { color: var(--valorant-green) !important; }
+.text-centinela { color: var(--valorant-yellow) !important; }
 
 
-.text-centinela { 
-    color: var(--valorant-yellow) !important; 
-}
+/* ==========================================================================
+   5. SECCIÓN DE MAPAS (EFECTOS UNIFICADOS)
+   ========================================================================== */
 
-
-.hover-link {
-    transition: all 0.2s ease-in-out;
-    display: inline-block;
-}
-
-.hover-link:hover {
-    transform: translateX(6px); 
-    filter: brightness(1.1); 
-    text-decoration: underline !important;
-}
-
-.border-morado {
-    border-color: var(--valorant-purple) !important;
-}
-
-#visor-arma {
-    transition: opacity 0.3s ease-in-out;
-}
-
-::selection {
-    background: #ff4655;
-    color: white;
-}
-::-moz-selection {
-    background: #ff4655;
-    color: white;
-}
-
-/* --- Efectos para la sección de Mapas (UNIFICADOS) --- */
-
-/* Gradiente para que el nombre del mapa siempre se lea bien */
+/* Gradiente para mejorar legibilidad sobre imágenes de mapas */
 .bg-gradient-dark {
     background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
 }
 
-/* Base de todas las tarjetas de mapas */
 .mapa-link .card {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -153,32 +171,28 @@ html {
     filter: brightness(0.6) grayscale(0.3); 
 }
 
-/* 1. EFECTO PARA MAPAS ACTIVOS (ROJO) */
-/* Si la tarjeta NO tiene la clase border-warning, usa el estilo rojo */
+/* Hover Mapas Activos (Rojo) */
 .mapa-link:hover .card:not(.border-warning) {
     box-shadow: 0 10px 20px rgba(255, 70, 85, 0.4) !important;
     border-color: #ff4655 !important; 
 }
 
-/* 2. EFECTO PARA MAPAS ICÓNICOS (DORADO) */
-/* Si la tarjeta tiene la clase border-warning, usa el estilo dorado */
+/* Hover Mapas Icónicos (Dorado + Elevación) */
 .mapa-link:hover .card.border-warning {
-    transform: translateY(-10px) scale(1.05); /* Elevación extra por ser leyenda */
+    transform: translateY(-10px) scale(1.05);
     box-shadow: 0 15px 30px rgba(255, 193, 7, 0.4) !important;
     border-color: #ffc107 !important; 
 }
 
-.text-warning {
-    color: #ffc107 !important;
-}
+.text-warning { color: #ffc107 !important; }
 
-/* 3. EFECTO HOVER COMÚN PARA IMÁGENES */
+/* Efecto imagen al pasar el ratón */
 .mapa-link:hover .mapa-img {
     transform: scale(1.1); 
     filter: brightness(1) grayscale(0);  
 }
 
-/* 4. ESTILO PARA MAPAS EN RESERVA (GRISES) */
+/* Estilo para mapas en reserva (Fuera de rotación) */
 .border-dashed {
     border-style: dashed !important;
     border-color: rgba(255, 255, 255, 0.2) !important;
@@ -186,22 +200,21 @@ html {
     transition: opacity 0.3s ease;
 }
 
-.border-dashed:hover {
-    opacity: 1;
-    border-color: rgba(255, 255, 255, 0.5) !important;
-}
+.border-dashed:hover { opacity: 1; border-color: rgba(255, 255, 255, 0.5) !important; }
 
-.tracking-widest {
-    letter-spacing: 0.3em;
-}
+.tracking-widest { letter-spacing: 0.3em; }
 
-/* Estilo para el panel de audio */
+
+/* ==========================================================================
+   6. SISTEMA DE AUDIO Y VOLUMEN
+   ========================================================================== */
+
 #audio-panel {
     background-color: rgba(15, 25, 35, 0.95) !important;
     backdrop-filter: blur(5px);
 }
 
-/* Personalizar el Slider de volumen */
+/* Estilos personalizados para el Slider de Volumen */
 .custom-range::-webkit-slider-runnable-track {
     background: #444;
     height: 4px;
@@ -217,4 +230,41 @@ html {
 .custom-range::-moz-range-thumb {
     background: #ff4655;
     border: none;
+}
+
+
+/* ==========================================================================
+   7. ANIMACIONES DE CARGA (INTERSECTION OBSERVER)
+   ========================================================================== */
+
+.hidden-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   8. OTROS EFECTOS Y AJUSTES
+   ========================================================================== */
+
+/* Enlaces con efecto de desplazamiento horizontal */
+.hover-link {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.hover-link:hover {
+    transform: translateX(6px); 
+    filter: brightness(1.1); 
+    text-decoration: underline !important;
+}
+
+#visor-arma {
+    transition: opacity 0.3s ease-in-out;
 }
