@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentes de Valorant</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/bootstrap.bundle.js"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="icon" type="image/png" href="img/icon.webp">
+    <!--Libreria model viewer(three.js)-->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-danger">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">VALORANT <span class="text-danger">//</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#duelistas">Duelistas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#controladores">Controladores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#iniciadores">Iniciadores</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#centinelas">Centinelas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="alert alert-danger alert-dismissible fade show mb-0 text-center rounded-0" role="alert">
+        <strong>¡Nuevo Episodio disponible!</strong> Revisa las notas del parche para ver los cambios en los agentes.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div id="heroValorant" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/all.jpeg" class="d-block w-100" alt="Todos los Agentes de Valorant">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-4">
+                    <h1 class="display-4 fw-bold">CONOCE A TUS AGENTES</h1>
+                    <p>Encuentra el estilo de juego que mejor se adapte a ti.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container my-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#" class="text-danger">Inicio</a></li>
+                <li class="breadcrumb-item active">Roles de Agente</li>
+            </ol>
+        </nav>
+
+        <section id="duelistas" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-danger border-4 ps-3 mb-4">Duelistas</h2>
+            <div class="row g-4">
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-duelista">
+                        <img src="img/jett.avif" class="card-img-top" alt="Jett">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">JETT</h5>
+                            <span class="badge bg-danger mb-2">Duelista</span>
+                            <p class="card-text">Agente versatil con gran agilidad y velocidad para entrar en el site
+                                antes que nadie.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalJett">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-duelista">
+                        <img src="img/phoenix.png" class="card-img-top" alt="Phoenix">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">PHOENIX</h5>
+                            <span class="badge bg-danger mb-2">Duelista</span>
+                            <p class="card-text">Utiliza el poder del fuego para cegar enemigos y curarse a sí mismo,
+                                perfecto para killear con su ulti.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalPhoenix">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-duelista">
+                        <img src="img/reyna.avif" class="card-img-top" alt="Reyna">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">REYNA</h5>
+                            <span class="badge bg-danger mb-2">Duelista</span>
+                            <p class="card-text">Agente que se fortalece con cada kill, devorando almas para curarse o
+                                volverse invulnerable.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalReyna">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-duelista">
+                        <img src="img/iso.avif" class="card-img-top" alt="ISO">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ISO</h5>
+                            <span class="badge bg-danger mb-2">Duelista</span>
+                            <p class="card-text">Ganador de duelos a Operator y agente con altas capacidades en duelos
+                                1vs1 con sus escudos.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalIso">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-duelista">
+                        <img src="img/neon.webp" class="card-img-top" alt="NEON">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">NEON</h5>
+                            <span class="badge bg-danger mb-2">Duelista</span>
+                            <p class="card-text">Agente que se mueve a gran velocidad y sobrecarga a los enemigos con
+                                sus habilidades zass!</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalNeon">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-duelista">
+                        <img src="img/yoru.avif" class="card-img-top" alt="YORU">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">YORU</h5>
+                            <span class="badge bg-danger mb-2">Duelista</span>
+                            <p class="card-text">Agente con habilidades de teletransporte y engaño, ideal para
+                                sorprender a los enemigos.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalYoru">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-duelista">
+                        <img src="img/waylay.avif" class="card-img-top" alt="WAYLAY">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">WAYLAY</h5>
+                            <span class="badge bg-danger mb-2">Duelista</span>
+                            <p class="card-text">Agente con habilidades de sigilo y engaño, perfecto para flanquear y
+                                eliminar a los enemigos por sorpresa.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalWaylay">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-duelista">
+                        <img src="img/raze.png" class="card-img-top" alt="RAZE">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">RAZE</h5>
+                            <span class="badge bg-danger mb-2">Duelista</span>
+                            <p class="card-text">Agente explosiva que utiliza granadas y su robot para causar caos y
+                                eliminar a los enemigos.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalRaze">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="controladores" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-primary border-4 ps-3 mb-4">Controladores</h2>
+            <div class="row g-4">
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-controlador">
+                        <img src="img/brimstone.avif" class="card-img-top" alt="Brimstone">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">BRIMSTONE</h5>
+                            <span class="badge bg-primary mb-2">Controlador</span>
+                            <p class="card-text">Liderazgo y potencia orbital para cubrir el mapa con humos.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalBrimstone">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-controlador">
+                        <img src="img/viper.avif" class="card-img-top" alt="Viper">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">VIPER</h5>
+                            <span class="badge bg-primary mb-2">Controlador</span>
+                            <p class="card-text">Veneno letal y control de área para desactivar a los enemigos.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalViper">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-controlador">
+                        <img src="img/astra.avif" class="card-img-top" alt="Astra">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">ASTRA</h5>
+                            <span class="badge bg-primary mb-2">Controlador</span>
+                            <p class="card-text">Control de área y visión para dominar el mapa con sus habilidades.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalAstra">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-controlador">
+                        <img src="img/clove.png" class="card-img-top" alt="Clove">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">CLOVE</h5>
+                            <span class="badge bg-primary mb-2">Controlador</span>
+                            <p class="card-text">Control de espacios cerrados en combates con inferioridad numerica</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalClove">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-controlador">
+                        <img src="img/harbor.avif" class="card-img-top" alt="Harbor">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">HARBOR</h5>
+                            <span class="badge bg-primary mb-2">Controlador</span>
+                            <p class="card-text">Agua por doquier con su control total de espacios y habilidades únicas.
+                            </p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalHarbor">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-controlador">
+                        <img src="img/omen.avif" class="card-img-top" alt="Omen">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">OMEN</h5>
+                            <span class="badge bg-primary mb-2">Controlador</span>
+                            <p class="card-text">Agente misterioso con habilidades siniestras para el control de
+                                espacios.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalOmen">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="iniciadores" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-success border-4 ps-3 mb-4 text-white">Iniciadores
+            </h2>
+            <div class="row g-4">
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-iniciador">
+                        <img src="img/skye.avif" class="card-img-top" alt="Skye">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">SKYE</h5>
+                            <span class="badge bg-iniciador mb-2">Iniciador</span>
+                            <p class="card-text">Agente con animales especializador en recavar informción de los
+                                enemigos.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalSkye">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-iniciador">
+                        <img src="img/sova.webp" class="card-img-top" alt="Sova">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">SOVA</h5>
+                            <span class="badge bg-iniciador mb-2">Iniciador</span>
+                            <p class="card-text">Agente especializado en recolección de información y apoyo táctico.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalSova">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-iniciador">
+                        <img src="img/kayo.avif" class="card-img-top" alt="Kayo">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">KAYO</h5>
+                            <span class="badge bg-iniciador mb-2">Iniciador</span>
+                            <p class="card-text">Bot especializado en recabar información sobre sus rivales.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalKayo">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-iniciador">
+                        <img src="img/gekko.png" class="card-img-top" alt="Gekko">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">GEKKO</h5>
+                            <span class="badge bg-iniciador mb-2">Iniciador</span>
+                            <p class="card-text">Agente con seres vivos capaces de recavar información del mapa.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalGekko">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-iniciador">
+                        <img src="img/fade.avif" class="card-img-top" alt="Fade">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">FADE</h5>
+                            <span class="badge bg-iniciador mb-2">Iniciador</span>
+                            <p class="card-text">Agente que con su utilidad es capaz de sacar información crucial.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalFade">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-iniciador">
+                        <img src="img/breach.avif" class="card-img-top" alt="breach">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">BREACH</h5>
+                            <span class="badge bg-iniciador mb-2">Iniciador</span>
+                            <p class="card-text">Agente con flashes y stuns capaz de dejar aturdidos a los enemigos.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalBreach">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-iniciador">
+                        <img src="img/tejo.avif" class="card-img-top" alt="Tejo">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">TEJO</h5>
+                            <span class="badge bg-iniciador mb-2">Iniciador</span>
+                            <p class="card-text">Agente con utilidad versatil para atacar y informar a su equipo.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalTejo">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="centinelas" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-centinela border-4 ps-3 mb-4 text-white">Centinelas
+            </h2>
+            <div class="row g-4">
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-centinela">
+                        <img src="img/chamber.avif" class="card-img-top" alt="Chamber">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">CHAMBER</h5>
+                            <span class="badge bg-centinela mb-2">Centinela</span>
+                            <p class="card-text">Agente agresivo especializado en defender el site con sus habilidades y
+                                armas.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalChamber">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-centinela">
+                        <img src="img/deadlock.avif" class="card-img-top" alt="deadlock">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">DEADLOCK</h5>
+                            <span class="badge bg-centinela mb-2">Centinela</span>
+                            <p class="card-text">Agente capaz de cazar otros agentes con su ulti y defender el site con
+                                facilidad.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalDeadlock">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-centinela">
+                        <img src="img/kiljoy.avif" class="card-img-top" alt="killjoy">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">KILLJOY</h5>
+                            <span class="badge bg-centinela mb-2">Centinela</span>
+                            <p class="card-text">Agente capaz de defender sitios sola, debido a su juego de granadas.
+                            </p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalKilljoy">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-centinela">
+                        <img src="img/sage.avif" class="card-img-top" alt="sage">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">SAGE</h5>
+                            <span class="badge bg-centinela mb-2">Centinela</span>
+                            <p class="card-text">Agente sanador capaz de revivir a compañeros en caso de muerte y
+                                defender el site.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalSage">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-centinela">
+                        <img src="img/cypher.avif" class="card-img-top" alt="cypher">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">CYPHER</h5>
+                            <span class="badge bg-centinela mb-2">Centinela</span>
+                            <p class="card-text">Agente misterioso capaz de defender sitios con sus setups cámara y
+                                prisiones.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalCypher">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-centinela">
+                        <img src="img/veto.webp" class="card-img-top" alt="veto">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">VETO </h5>
+                            <span class="badge bg-centinela mb-2">Centinela</span>
+                            <p class="card-text">Agente capaz de evolucionar en mitad de la partida para defender a sus
+                                compañeros.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalVeto">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm border-0 card-centinela">
+                        <img src="img/vyse.avif" class="card-img-top" alt="vyse">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">VYSE</h5>
+                            <span class="badge bg-centinela mb-2">Centinela</span>
+                            <p class="card-text">Agente capaz de tener control de un site con sus espinas y flashes.</p>
+                            <button class="btn btn-dark btn-sm w-100" data-bs-toggle="modal"
+                                data-bs-target="#modalVyse">Habilidades</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="arsenal-3d" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-danger border-4 ps-3 mb-4 text-white">Arsenal 3D</h2>
+
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="list-group weapon-selector" id="weapon-list">
+                        <button type="button"
+                            class="list-group-item list-group-item-action active fw-bold border-danger bg-danger text-white"
+                            data-model="vandal">
+                            Vandal
+                        </button>
+                        <button type="button"
+                            class="list-group-item list-group-item-action bg-dark text-white border-secondary"
+                            data-model="phantom">
+                            Phantom
+                        </button>
+                        <button type="button"
+                            class="list-group-item list-group-item-action bg-dark text-white border-secondary"
+                            data-model="operator">
+                            Operator
+                        </button>
+                    </div>
+                    <div class="mt-3 text-secondary small">
+                        <p><i class="fw-bold text-danger">Click</i> izq para rotar el arma.</p>
+                        <p><i class="fw-bold text-danger">Rueda</i> del ratón para zoom.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="card bg-dark border-secondary shadow-lg" style="height: 450px; overflow: hidden;">
+                        <model-viewer id="visor-arma" src="models/vandal.glb" alt="Modelo 3D del arma" auto-rotate
+                            camera-controls environment-image="neutral" shadow-intensity="1" exposure="1"
+                            style="width: 100%; height: 100%; background-color: #0f1923;">
+                        </model-viewer>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="faq-section" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-morado border-4 ps-3 mb-4 text-white">Preguntas
+                Frecuentes</h2>
+
+            <div class="accordion valorant-accordion" id="faq">
+
+                <div class="accordion-item border-0 mb-2 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq1">
+                            ¿Cómo desbloqueo nuevos agentes?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">
+                            Actualmente existen tres formas principales de desbloquear agentes:
+                            <ul class="mt-2 mb-0">
+                                <li><strong>Créditos Kingdom (KC):</strong> Acumulando 8.000 KC jugando partidas y
+                                    completando misiones diarias.</li>
+                                <li><strong>Puntos Valorant (VP):</strong> Comprándolos directamente con dinero real
+                                    (1.000 VP).</li>
+                                <li><strong>Xbox Game Pass:</strong> Si vinculas tu cuenta de Riot con una suscripción
+                                    activa a Xbox Game Pass, tendrás todos los agentes desbloqueados automáticamente,
+                                    ¡incluyendo los nuevos el día de lanzamiento!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-2 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+                            ¿Puedo probar un agente antes de gastar mis créditos?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">
+                            ¡Sí! Puedes ir al modo <strong>Práctica (La Galería)</strong>. Allí tendrás acceso a todos
+                            los agentes del juego, incluso a los que no has desbloqueado, para que puedas probar sus
+                            habilidades y decidir si se adaptan a tu estilo de juego antes de comprarlos.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-2 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq3">
+                            ¿Qué agentes son mejores para empezar a jugar?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">
+                            Si eres nuevo en Valorant, te recomendamos empezar con los agentes gratuitos que tienen
+                            mecánicas sencillas de entender:
+                            <ul class="mt-2 mb-0">
+                                <li><strong>Phoenix (Duelista):</strong> Sus habilidades son fáciles de usar y puede
+                                    curarse a sí mismo.</li>
+                                <li><strong>Sage (Centinela):</strong> Excelente para aprender a defender y apoyar al
+                                    equipo curando.</li>
+                                <li><strong>Brimstone (Controlador):</strong> Sus humos se colocan con un mapa
+                                    interactivo muy intuitivo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item border-0 shadow-sm">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq4">
+                            ¿Qué es el Evento de Reclutamiento de Agente?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                        <div class="accordion-body">
+                            Cuando Riot lanza un nuevo agente, se activa un evento especial de reclutamiento que dura 28
+                            días. Durante ese tiempo, puedes desbloquear al nuevo agente simplemente ganando XP
+                            (experiencia) jugando partidas, sin necesidad de gastar Créditos Kingdom. Si no lo consigues
+                            en ese plazo, pasará a estar disponible en la tienda por 8.000 KC.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="resumen-roles" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-morado border-4 ps-3 mb-4 text-white">Resumen de
+                Funciones</h2>
+
+            <div class="row g-4">
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="p-4 h-100 border-top border-duelista border-4 shadow-sm role-summary-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="role-icon icon-lg mask-duelista color-duelista me-2"></span>
+                            <h4 class="fw-bold mb-0 text-white">DUELISTAS</h4>
+                        </div>
+                        <p class="text-light opacity-75 small mb-0">
+                            Asesinos autosuficientes. Son los especialistas en conseguir la primera baja de la ronda y
+                            abrir los sitios para que el equipo entre.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="p-4 h-100 border-top border-controlador border-4 shadow-sm role-summary-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="role-icon icon-lg mask-controlador color-controlador me-2"></span>
+                            <h4 class="fw-bold mb-0 text-white">CONTROLADORES</h4>
+                        </div>
+                        <p class="text-light opacity-75 small mb-0">
+                            Expertos en dividir el territorio. Usan sus humos y habilidades para bloquear la visión y
+                            dictar el ritmo de la partida.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="p-4 h-100 border-top border-iniciador border-4 shadow-sm role-summary-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="role-icon icon-lg mask-iniciador color-iniciador me-2"></span>
+                            <h4 class="fw-bold mb-0 text-white">INICIADORES</h4>
+                        </div>
+                        <p class="text-light opacity-75 small mb-0">
+                            Reúnen información y expulsan a los enemigos de sus escondites, desorientándolos para
+                            facilitar la entrada al sitio.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-3">
+                    <div class="p-4 h-100 border-top border-centinela border-4 shadow-sm role-summary-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="role-icon icon-lg mask-centinela color-centinela me-2"></span>
+                            <h4 class="fw-bold mb-0 text-white">CENTINELAS</h4>
+                        </div>
+                        <p class="text-light opacity-75 small mb-0">
+                            Expertos en defensa y apoyo. Bloquean el paso, vigilan los flancos y aseguran el territorio
+                            que el equipo ya ha conquistado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="modalJett" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Jett</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/jett/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Nube de
+                                humo</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/jett/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Corriente
+                                ascendente</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/jett/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Viento de
+                                cola</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/jett/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Tormenta
+                                de cuchillas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPhoenix" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Phoenix</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/phoenix/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Llamarada</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/phoenix/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Bola
+                                Curva</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/phoenix/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Combustión</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/phoenix/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Cenizas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalReyna" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Reyna</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/reyna/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Mirada
+                                lasciva</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/reyna/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Devorar</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/reyna/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Despreciar</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/reyna/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Emperatriz</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalIso" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Iso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/iso/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Contingencia</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/iso/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Socavar</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/iso/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Disparo
+                                doble</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/iso/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Contrato
+                                de asesinato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalNeon" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Neon</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/neon/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Vía
+                                rápida</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/neon/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Proyectil
+                                electrizante</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/neon/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Cambio de
+                                marcha</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/neon/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Sobrecarga</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalYoru" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Yoru</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/yoru/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Engaño</a>
+                        </li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/yoru/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Punto
+                                Ciego</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/yoru/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Infiltración</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/yoru/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Viaje
+                                Interdimensional</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalWaylay" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Waylay</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/waylay/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Saturación</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/waylay/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Velocidad
+                                de la luz</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/waylay/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Refracción</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/waylay/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Trayectorias
+                                convergentes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalRaze" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Raze</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/raze/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Bot
+                                explosivo</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/raze/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Fardo
+                                Explsivo</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/raze/"
+                                target="_blank" class="text-decoration-none text-duelista fw-bold hover-link">Balas de
+                                pintura</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/raze/"
+                                target="_blank"
+                                class="text-decoration-none text-duelista fw-bold hover-link">Cierratelones</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalBrimstone" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Brimstone</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/brimstone/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Baliza
+                                estimulante</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/brimstone/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Incinerario</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/brimstone/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Cortina
+                                de humo</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/brimstone/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Golpe
+                                orbital</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalViper" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Viper</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/viper/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Veneno
+                                de serpiente</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/viper/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Nube
+                                venenosa</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/viper/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Pantalla tóxica</a>
+                        </li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/viper/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Pozo de
+                                la víbora</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAstra" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Astra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/astra/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Pozo
+                                gravitatorio</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/astra/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Pulso
+                                nova</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/astra/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Nebulosa</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/astra/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Separación cósmica</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalClove" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Clove</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/clove/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Chute
+                                de energía</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/clove/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Tejemaneje</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/clove/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Treta</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/clove/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">No me
+                                voy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalHarbor" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Harbor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/harbor/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Descarga tormentosa</a>
+                        </li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/harbor/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Marea
+                                alta</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/harbor/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Cala</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/harbor/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Ajuste
+                                de cuentas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalOmen" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Omen</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/omen/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Aparición tenebrosa</a>
+                        </li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/omen/"
+                                target="_blank"
+                                class="text-decoration-none text-controlador fw-bold hover-link">Paranoia</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/omen/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Velo
+                                tormentoso</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/omen/"
+                                target="_blank" class="text-decoration-none text-controlador fw-bold hover-link">Desde
+                                las sombras</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSkye" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Skye</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/skye/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Reforestación</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/skye/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Precursor</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/skye/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Luz
+                                guía</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/skye/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Buscadores</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSova" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Sova</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/sova/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Dron de
+                                reconocimiento</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/sova/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Flecha
+                                explosiva</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/sova/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Proyectil
+                                de reconocimiento</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/sova/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Furia del
+                                cazador</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalKayo" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Kayo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/kayo/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Frag/mento</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/kayo/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Flash</a>
+                        </li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/kayo/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Punto/Cero</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/kayo/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Cmd/anular</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalGekko" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Gekko</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/gekko/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Mosh</a>
+                        </li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/gekko/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Wingman</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/gekko/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Dizzy</a>
+                        </li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/gekko/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Trash</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalFade" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Fade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/fade/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Tormento</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/fade/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Apresar</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/fade/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Tormento</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/fade/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Ocaso</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalBreach" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Breach</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/breach/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Réplica</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/breach/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Explosión
+                                cegadora</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/breach/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Falla</a>
+                        </li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/breach/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Fragor
+                                imparable</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalTejo" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Tejo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/tejo/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Entrega
+                                especial</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/tejo/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Dron de
+                                sigilo</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/tejo/"
+                                target="_blank" class="text-decoration-none text-iniciador fw-bold hover-link">Descarga
+                                guiada</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/tejo/"
+                                target="_blank"
+                                class="text-decoration-none text-iniciador fw-bold hover-link">Armagedon</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalChamber" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Chamber</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/chamber/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Marca
+                                registrada</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/chamber/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Cazador
+                                de cabezas</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/chamber/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Rendez-vous</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/chamber/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Tour de
+                                Force</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSage" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Sage</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/sage/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Orbe
+                                barrera</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/sage/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Orbe de
+                                relentización</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/sage/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Orbe de
+                                sanación</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/sage/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Resurrección</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalKilljoy" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Killjoy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/killjoy/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Torreta</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/killjoy/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Bot de
+                                alarma</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/killjoy/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Nanoenjambre</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/killjoy/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Bloqueo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDeadlock" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Deadlock</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/deadlock/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Sensor
+                                sonoro</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/deadlock/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Red de
+                                gravedad</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/deadlock/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Malla de
+                                barrera</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/deadlock/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Aniquilación</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCypher" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Cypher</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/cypher/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Cable
+                                trampa</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/cypher/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Prisión
+                                cibernética</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/cypher/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Cámara
+                                espía</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/cypher/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Hurto
+                                neuronal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalVeto" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Veto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/veto/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Control
+                                transversal</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/veto/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Asfixia</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/veto/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Interceptor</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/veto/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Evolución</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalVyse" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered text-dark">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Habilidades de Vyse</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-3">Haz clic en la habilidad para verla en la web oficial.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><strong>C:</strong> <a href="https://playvalorant.com/es-es/agents/vyse/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Zarzal
+                                Lacerante</a></li>
+                        <li class="mb-2"><strong>Q:</strong> <a href="https://playvalorant.com/es-es/agents/vyse/"
+                                target="_blank"
+                                class="text-decoration-none text-centinela fw-bold hover-link">Cizallas</a></li>
+                        <li class="mb-2"><strong>E:</strong> <a href="https://playvalorant.com/es-es/agents/vyse/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Rosa
+                                metálica</a></li>
+                        <li class="mb-2"><strong>X:</strong> <a href="https://playvalorant.com/es-es/agents/vyse/"
+                                target="_blank" class="text-decoration-none text-centinela fw-bold hover-link">Jardín de
+                                acero</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-4 border-top border-danger">
+        <div class="container text-center">
+            <p class="mb-1">Proyecto EPD2 - Bootstrap 5 Made by Jairo Rodríguez Hernández</p>
+            <p class="text-secondary small">Cumple con la normativa WCAG de accesibilidad.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

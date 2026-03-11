@@ -1,0 +1,127 @@
+:root {
+    --valorant-dark-blue: #0f1923;  
+    --valorant-cream: #ece8e1;      
+    --valorant-red: #ff4655;        
+    --valorant-blue: #1d66c5;      
+    --valorant-green: #33ad62;      
+    --valorant-yellow: #ecac22;     
+    --valorant-text-dark: #0f1923;  
+    --valorant-purple: #8a3bdd;
+}
+
+
+body {
+    background-color: var(--valorant-dark-blue);
+    color: white;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-body {
+    background-color: var(--valorant-cream); 
+    color: var(--valorant-text-dark);
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 450px; 
+    object-fit: cover; 
+    object-position: center top; 
+}
+
+.card-duelista:hover { outline: 3px solid var(--valorant-red); }
+.card-controlador:hover { outline: 3px solid var(--valorant-blue); }
+.card-iniciador:hover { outline: 3px solid var(--valorant-green); }
+.card-centinela:hover { outline: 3px solid var(--valorant-yellow) !important; }
+
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5) !important;
+    z-index: 1;
+}
+
+.border-duelista { border-color: var(--valorant-red) !important; }
+.border-controlador { border-color: var(--valorant-blue) !important; }
+.border-iniciador { border-color: var(--valorant-green) !important; }
+.border-centinela { border-color: var(--valorant-yellow) !important; }
+
+
+.bg-iniciador {
+    background-color: var(--valorant-green) !important;
+    color: var(--valorant-dark-blue) !important;
+    font-weight: bold;
+}
+
+.bg-centinela {
+    background-color: var(--valorant-yellow) !important;
+    color: var(--valorant-dark-blue) !important;
+    font-weight: bold;
+}
+
+
+.navbar {
+    background-color: var(--valorant-dark-blue) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.breadcrumb-item, .breadcrumb-item a { color: rgba(255, 255, 255, 0.8) !important; text-decoration: none; }
+.breadcrumb-item.active { color: var(--valorant-red) !important; font-weight: bold; }
+.breadcrumb-item + .breadcrumb-item::before { color: var(--valorant-red); content: "//"; }
+
+
+
+.hidden-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+
+.show-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.text-duelista { color: var(--valorant-red) !important; }
+.text-controlador { color: var(--valorant-blue) !important; }
+.text-iniciador { color: var(--valorant-green) !important; }
+
+
+.text-centinela { 
+    color: var(--valorant-yellow) !important; 
+}
+
+
+.hover-link {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.hover-link:hover {
+    transform: translateX(6px); 
+    filter: brightness(1.1); 
+    text-decoration: underline !important;
+}
+
+.border-morado {
+    border-color: var(--valorant-purple) !important;
+}
+
+#visor-arma {
+    transition: opacity 0.3s ease-in-out;
+}
