@@ -125,3 +125,96 @@ html {
 #visor-arma {
     transition: opacity 0.3s ease-in-out;
 }
+
+::selection {
+    background: #ff4655;
+    color: white;
+}
+::-moz-selection {
+    background: #ff4655;
+    color: white;
+}
+
+/* --- Efectos para la sección de Mapas (UNIFICADOS) --- */
+
+/* Gradiente para que el nombre del mapa siempre se lea bien */
+.bg-gradient-dark {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+}
+
+/* Base de todas las tarjetas de mapas */
+.mapa-link .card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.mapa-img {
+    transition: transform 0.6s ease, filter 0.4s ease;
+    filter: brightness(0.6) grayscale(0.3); 
+}
+
+/* 1. EFECTO PARA MAPAS ACTIVOS (ROJO) */
+/* Si la tarjeta NO tiene la clase border-warning, usa el estilo rojo */
+.mapa-link:hover .card:not(.border-warning) {
+    box-shadow: 0 10px 20px rgba(255, 70, 85, 0.4) !important;
+    border-color: #ff4655 !important; 
+}
+
+/* 2. EFECTO PARA MAPAS ICÓNICOS (DORADO) */
+/* Si la tarjeta tiene la clase border-warning, usa el estilo dorado */
+.mapa-link:hover .card.border-warning {
+    transform: translateY(-10px) scale(1.05); /* Elevación extra por ser leyenda */
+    box-shadow: 0 15px 30px rgba(255, 193, 7, 0.4) !important;
+    border-color: #ffc107 !important; 
+}
+
+.text-warning {
+    color: #ffc107 !important;
+}
+
+/* 3. EFECTO HOVER COMÚN PARA IMÁGENES */
+.mapa-link:hover .mapa-img {
+    transform: scale(1.1); 
+    filter: brightness(1) grayscale(0);  
+}
+
+/* 4. ESTILO PARA MAPAS EN RESERVA (GRISES) */
+.border-dashed {
+    border-style: dashed !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    transition: opacity 0.3s ease;
+}
+
+.border-dashed:hover {
+    opacity: 1;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.tracking-widest {
+    letter-spacing: 0.3em;
+}
+
+/* Estilo para el panel de audio */
+#audio-panel {
+    background-color: rgba(15, 25, 35, 0.95) !important;
+    backdrop-filter: blur(5px);
+}
+
+/* Personalizar el Slider de volumen */
+.custom-range::-webkit-slider-runnable-track {
+    background: #444;
+    height: 4px;
+}
+
+.custom-range::-webkit-slider-thumb {
+    background: #ff4655;
+    margin-top: -6px;
+    border: none;
+    box-shadow: 0 0 5px #ff4655;
+}
+
+.custom-range::-moz-range-thumb {
+    background: #ff4655;
+    border: none;
+}

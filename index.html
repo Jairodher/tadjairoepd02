@@ -19,15 +19,33 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-danger">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">VALORANT <span class="text-danger">//</span></a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="menuPrincipal">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#duelistas">Duelistas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#controladores">Controladores</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#iniciadores">Iniciadores</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#centinelas">Centinelas</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Agentes
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark border-danger" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#duelistas">Duelistas</a></li>
+                            <li><a class="dropdown-item" href="#controladores">Controladores</a></li>
+                            <li><a class="dropdown-item" href="#iniciadores">Iniciadores</a></li>
+                            <li><a class="dropdown-item" href="#centinelas">Centinelas</a></li>
+                            <li>
+                                <hr class="dropdown-divider border-secondary">
+                            </li>
+                            <li><a class="dropdown-item" href="#tier-list">Meta Tier List</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#mapas">Mapas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#arsenal-3d"><span class="text-danger">●</span>
+                            Arsenal 3D</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq-section">FAQ</a></li>
                 </ul>
             </div>
         </div>
@@ -48,6 +66,27 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="audio-panel" class="bg-dark border border-danger p-3 rounded shadow-lg"
+        style="position: fixed; bottom: 80px; right: 20px; z-index: 1000; width: 250px;">
+
+        <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="text-white small fw-bold text-uppercase tracking-widest">OST Valorant</span>
+            <button id="btn-play-pause" class="btn btn-sm btn-danger rounded-circle" style="width: 35px; height: 35px;">
+                ▶
+            </button>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+            <span id="volume-icon" class="text-white-50 small">🔈</span>
+            <input type="range" class="form-range custom-range" id="volumen-slider" min="0" max="1" step="0.01"
+                value="0.3">
+        </div>
+
+        <audio id="main-soundtrack" loop>
+            <source src="mp3/soundtrack.mp3" type="audio/mpeg">
+        </audio>
     </div>
 
     <main class="container my-5">
@@ -593,6 +632,279 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <section id="tier-list" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-morado border-4 ps-3 mb-4 text-white">
+                Meta Tier List <span class="badge bg-danger fs-6 align-middle ms-2">Parche 2026</span>
+            </h2>
+
+            <div class="tier-container d-flex flex-column gap-3">
+
+                <div class="tier-row d-flex align-items-center bg-dark p-3 rounded border-start border-danger border-5">
+                    <div class="tier-label fw-bold text-danger me-4">S</div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="agent-avatar text-center"><img src="img/jett.avif"
+                                class="rounded-circle border border-2 border-danger" width="60">
+                            <div class="small text-white-50 mt-1">Jett</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/cypher.avif"
+                                class="rounded-circle border border-2 border-danger" width="60">
+                            <div class="small text-white-50 mt-1">Cypher</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/clove.png"
+                                class="rounded-circle border border-2 border-danger" width="60">
+                            <div class="small text-white-50 mt-1">Clove</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="tier-row d-flex align-items-center bg-dark p-3 rounded border-start border-warning border-5">
+                    <div class="tier-label fw-bold text-warning me-4">A</div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="agent-avatar text-center"><img src="img/reyna.avif"
+                                class="rounded-circle border border-2 border-warning" width="60">
+                            <div class="small text-white-50 mt-1">Reyna</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/vyse.avif"
+                                class="rounded-circle border border-2 border-warning" width="60">
+                            <div class="small text-white-50 mt-1">Vyse</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/gekko.png"
+                                class="rounded-circle border border-2 border-warning" width="60">
+                            <div class="small text-white-50 mt-1">Gekko</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/omen.avif"
+                                class="rounded-circle border border-2 border-warning" width="60">
+                            <div class="small text-white-50 mt-1">Omen</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/raze.png"
+                                class="rounded-circle border border-2 border-warning" width="60">
+                            <div class="small text-white-50 mt-1">Raze</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tier-row d-flex align-items-center bg-dark p-3 rounded border-start border-info border-5">
+                    <div class="tier-label fw-bold text-info me-4">B</div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="agent-avatar text-center"><img src="img/tejo.avif"
+                                class="rounded-circle border border-2 border-info" width="60">
+                            <div class="small text-white-50 mt-1">Tejo</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/fade.avif"
+                                class="rounded-circle border border-2 border-info" width="60">
+                            <div class="small text-white-50 mt-1">Fade</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/kiljoy.avif"
+                                class="rounded-circle border border-2 border-info" width="60">
+                            <div class="small text-white-50 mt-1">Killjoy</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/sova.webp"
+                                class="rounded-circle border border-2 border-info" width="60">
+                            <div class="small text-white-50 mt-1">Sova</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/brimstone.avif"
+                                class="rounded-circle border border-2 border-info" width="60">
+                            <div class="small text-white-50 mt-1">Brimstone</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="tier-row d-flex align-items-center bg-dark p-3 rounded border-start border-success border-5">
+                    <div class="tier-label fw-bold text-success me-4">C</div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="agent-avatar text-center"><img src="img/sage.avif"
+                                class="rounded-circle border border-2 border-success" width="60">
+                            <div class="small text-white-50 mt-1">Sage</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/viper.avif"
+                                class="rounded-circle border border-2 border-success" width="60">
+                            <div class="small text-white-50 mt-1">Viper</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/neon.webp"
+                                class="rounded-circle border border-2 border-success" width="60">
+                            <div class="small text-white-50 mt-1">Neon</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/kayo.avif"
+                                class="rounded-circle border border-2 border-success" width="60">
+                            <div class="small text-white-50 mt-1">Kayo</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="tier-row d-flex align-items-center bg-dark p-3 rounded border-start border-secondary border-5">
+                    <div class="tier-label fw-bold text-secondary me-4">D</div>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="agent-avatar text-center"><img src="img/yoru.avif"
+                                class="rounded-circle border border-2 border-secondary" width="60">
+                            <div class="small text-white-50 mt-1">Yoru</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/deadlock.avif"
+                                class="rounded-circle border border-2 border-secondary" width="60">
+                            <div class="small text-white-50 mt-1">Deadlock</div>
+                        </div>
+                        <div class="agent-avatar text-center"><img src="img/harbor.avif"
+                                class="rounded-circle border border-2 border-secondary" width="60">
+                            <div class="small text-white-50 mt-1">Harbor</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="mapas" class="mb-5">
+            <h2 class="text-uppercase fw-bold border-start border-danger border-4 ps-3 mb-4 text-white">
+                Estado de Mapas <span class="badge bg-danger fs-6 align-middle ms-2">ACTUALIZADO 2026</span>
+            </h2>
+
+            <h4 class="text-warning mb-3 small"><i class="text-warning">★</i> MAPAS ICÓNICOS</h4>
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <a href="https://playvalorant.com/es-es/maps/" target="_blank"
+                        class="text-decoration-none mapa-link">
+                        <div class="card bg-dark text-white border-warning border-opacity-50 overflow-hidden shadow-lg"
+                            style="height: 200px;">
+                            <img src="img/ascent.jpg" class="card-img mapa-img" alt="Ascent"
+                                style="height: 100%; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient-dark">
+                                <h4 class="fw-bold mb-0 text-warning">ASCENT</h4>
+                                <p class="small mb-0 opacity-75">Puertas mecánicas y Mid clásico.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://playvalorant.com/es-es/maps/" target="_blank"
+                        class="text-decoration-none mapa-link">
+                        <div class="card bg-dark text-white border-warning border-opacity-50 overflow-hidden shadow-lg"
+                            style="height: 200px;">
+                            <img src="img/haven.jpg" class="card-img mapa-img" alt="Haven"
+                                style="height: 100%; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient-dark">
+                                <h4 class="fw-bold mb-0 text-warning">HAVEN</h4>
+                                <p class="small mb-0 opacity-75">El desafío de los 3 sites.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://playvalorant.com/es-es/maps/" target="_blank"
+                        class="text-decoration-none mapa-link">
+                        <div class="card bg-dark text-white border-warning border-opacity-50 overflow-hidden shadow-lg"
+                            style="height: 200px;">
+                            <img src="img/bind.png" class="card-img mapa-img" alt="Bind"
+                                style="height: 100%; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient-dark">
+                                <h4 class="fw-bold mb-0 text-warning">BIND</h4>
+                                <p class="small mb-0 opacity-75">Teletransportadores y desierto.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://playvalorant.com/es-es/maps/" target="_blank"
+                        class="text-decoration-none mapa-link">
+                        <div class="card bg-dark text-white border-warning border-opacity-50 overflow-hidden shadow-lg"
+                            style="height: 200px;">
+                            <img src="img/split.avif" class="card-img mapa-img" alt="Split"
+                                style="height: 100%; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient-dark">
+                                <h4 class="fw-bold mb-0 text-warning">SPLIT</h4>
+                                <p class="small mb-0 opacity-75">Verticalidad y cuerdas urbanas.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <h4 class="text-white-50 mb-3 small"><i class="text-danger">●</i> ROTACIÓN ACTIVA (POOL COMPETITIVO)</h4>
+            <div class="row g-3 mb-5">
+                <div class="col-md-3 col-sm-6">
+                    <a href="https://playvalorant.com/es-es/maps/" target="_blank"
+                        class="text-decoration-none mapa-link">
+                        <div class="card bg-dark text-white border-0 overflow-hidden shadow-sm">
+                            <img src="img/pearl.webp" class="card-img mapa-img" alt="Pearl"
+                                style="height: 120px; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient-dark">
+                                <h5 class="fw-bold mb-0">PEARL</h5>
+                                <p class="small mb-0 opacity-75">Ciudad bajo el domo.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="https://playvalorant.com/es-es/maps/" target="_blank"
+                        class="text-decoration-none mapa-link">
+                        <div class="card bg-dark text-white border-0 overflow-hidden shadow-sm">
+                            <img src="img/corrode.jpg" class="card-img mapa-img" alt="Corrode"
+                                style="height: 120px; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient-dark">
+                                <h5 class="fw-bold mb-0">CORRODE</h5>
+                                <p class="small mb-0 opacity-75">Zona industrial y óxido.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="https://playvalorant.com/es-es/maps/" target="_blank"
+                        class="text-decoration-none mapa-link">
+                        <div class="card bg-dark text-white border-0 overflow-hidden shadow-sm">
+                            <img src="img/abyss.jpg" class="card-img mapa-img" alt="Abyss"
+                                style="height: 120px; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient-dark">
+                                <h5 class="fw-bold mb-0">ABYSS</h5>
+                                <p class="small mb-0 opacity-75">Caídas al vacío.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="https://playvalorant.com/es-es/maps/" target="_blank"
+                        class="text-decoration-none mapa-link">
+                        <div class="card bg-dark text-white border-0 overflow-hidden shadow-sm">
+                            <img src="img/breeze.webp" class="card-img mapa-img" alt="Breeze"
+                                style="height: 120px; object-fit: cover;">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end bg-gradient-dark">
+                                <h5 class="fw-bold mb-0">BREEZE</h5>
+                                <p class="small mb-0 opacity-75">Control de distancias largas.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <h4 class="text-white-50 mb-3 small"><i class="text-secondary">○</i> EN LA RESERVA (ACTUALMENTE FUERA)</h4>
+            <div class="row g-3 opacity-75">
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="card bg-dark text-white border border-secondary border-dashed p-2">
+                        <h6 class="mb-0 fw-bold">SUNSET</h6>
+                        <span class="badge bg-secondary" style="font-size: 0.6rem;">FUERA DE RANKED</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="card bg-dark text-white border border-secondary border-dashed p-2">
+                        <h6 class="mb-0 fw-bold">ICEBOX</h6>
+                        <span class="badge bg-secondary" style="font-size: 0.6rem;">FUERA DE RANKED</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="card bg-dark text-white border border-secondary border-dashed p-2">
+                        <h6 class="mb-0 fw-bold">LOTUS</h6>
+                        <span class="badge bg-secondary" style="font-size: 0.6rem;">FUERA DE RANKED</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 text-center">
+                    <div class="card bg-dark text-white border border-secondary border-dashed p-2">
+                        <h6 class="mb-0 fw-bold">FRACTURE</h6>
+                        <span class="badge bg-secondary" style="font-size: 0.6rem;">FUERA DE RANKED</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1451,6 +1763,11 @@
             <p class="text-secondary small">Cumple con la normativa WCAG de accesibilidad.</p>
         </div>
     </footer>
+
+    <button id="btn-back-to-top" class="btn btn-danger btn-lg rounded-circle shadow-lg"
+        style="position: fixed; bottom: 20px; right: 20px; display: none; z-index: 1000; width: 50px; height: 50px;">
+        ↑
+    </button>
 </body>
 
 </html>
